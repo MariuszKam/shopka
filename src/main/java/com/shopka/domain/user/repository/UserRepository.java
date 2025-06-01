@@ -1,6 +1,10 @@
-package com.shopka.domain.user;
+package com.shopka.domain.user.repository;
 
 import java.util.Optional;
+
+import com.shopka.domain.user.Email;
+import com.shopka.domain.user.User;
+import com.shopka.domain.user.UserId;
 
 public interface UserRepository {
 

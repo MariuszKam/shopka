@@ -6,8 +6,11 @@ public class Role {
 
    private final RoleId id;
 
-   public Role(RoleId id) {
+   private final RoleName name;
+
+   public Role(RoleId id, RoleName name) {
     this.id = Objects.requireNonNull(id);
+    this.name = Objects.requireNonNull(name);
    }
 
    public RoleId getId() {
