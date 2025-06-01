@@ -14,4 +14,14 @@ public class RoleName {
         return name;
     }
 
+    @Override
+    public int hashCode() {
+        return name.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof RoleName other && name.equals(other.name);
+    }
+
 }

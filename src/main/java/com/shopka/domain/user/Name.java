@@ -14,5 +14,15 @@ public class Name {
         return name;
     }
 
+    @Override
+    public int hashCode() {
+        return name.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof Name other && name.equals(other.name);
+    }
+
 }
 
