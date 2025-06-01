@@ -17,4 +17,14 @@ public class Password {
     public boolean matches(String rawPassword, PasswordEncoderPort encoder) {
         return encoder.matches(rawPassword, hash);
     }
+
+    @Override
+    public int hashCode() {
+        return hash.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof Password other && hash.equals(other.hash);
+    }
 }
