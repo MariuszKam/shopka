@@ -1,6 +1,9 @@
 package com.shopka.domain.user;
 
 import java.util.Objects;
+import java.util.Set;
+
+import com.shopka.domain.user.role.Role;
 
 public class User {
 
@@ -8,12 +11,18 @@ public class User {
 
     private final Email email;
 
-    private final String name;
+    private final Name name;
 
-    public User(UserId id, Email email, String name) {
+    private final Password password;
+
+    private final Set<Role> roles;
+
+    public User(UserId id, Email email, Name name, Password password, Set<Role> roles) {
         this.id = Objects.requireNonNull(id);
         this.email = Objects.requireNonNull(email);
         this.name = Objects.requireNonNull(name);
+        this.password = Objects.requireNonNull(password);
+        this.roles = Objects.requireNonNull(roles);
     }
 
     public UserId getId() {
@@ -24,8 +33,16 @@ public class User {
         return email;
     }
 
-    public String getName() {
+    public Name getName() {
         return name;
+    }
+
+    public Password getPassword() {
+        return password;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
     }
 
     @Override
@@ -37,4 +54,5 @@ public class User {
     public int hashCode() {
         return id.hashCode();
     }
+
 }
