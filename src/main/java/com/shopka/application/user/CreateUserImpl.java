@@ -1,5 +1,7 @@
 package com.shopka.application.user;
 
+import java.util.Objects;
+
 import com.shopka.domain.user.Email;
 import com.shopka.domain.user.Name;
 import com.shopka.domain.user.Password;
@@ -15,8 +17,8 @@ public class CreateUserImpl implements CreateUser {
     private final PasswordEncoderPort passwordEncoderPort;
 
     public CreateUserImpl(UserRepository userRepository, PasswordEncoderPort passwordEncoderPort) {
-        this.userRepository = userRepository;
-        this.passwordEncoderPort = passwordEncoderPort;
+        this.userRepository = Objects.requireNonNull(userRepository);
+        this.passwordEncoderPort = Objects.requireNonNull(passwordEncoderPort);
     }
 
     @Override
