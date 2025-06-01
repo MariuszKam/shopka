@@ -55,4 +55,8 @@ public class User {
         return id.hashCode();
     }
 
+    public boolean hasRole(Role role) {
+        return roles.contains(role);
+    }
+
 }
