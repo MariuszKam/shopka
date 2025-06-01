@@ -33,28 +33,22 @@ public class CreateCustomerImpl implements CreateCustomer {
     @Override
     public User createCustomer(String name, String email, String password) {
         Email customerEmail = new Email(email);
-
         if (userRepository.findByEmail(customerEmail).isPresent()) {
             throw new IllegalArgumentException("Email already used");
         }
 
         RoleName roleName = new RoleName("CUSTOMER");
-
         Role customerRole = roleRepository.findByName(roleName)
                 .orElseThrow(() -> new IllegalArgumentException("Role CUSTOMER not found"));
 
         Name customerName = new Name(name);
 
         String encodedPassword = passwordEncoderPort.encode(password);
-
         Password customerPassword = new Password(encodedPassword);
 
         User customer = new User(UserId.random(), customerEmail, customerName, customerPassword, Set.of(customerRole));
-
         userRepository.save(customer);
-
         return customer;
-
     }
 
 }

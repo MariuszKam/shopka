@@ -2,6 +2,7 @@ package com.shopka.domain.user.role.repository;
 
 import java.util.Optional;
 
+import com.shopka.domain.user.role.Role;
 import com.shopka.domain.user.role.RoleId;
 import com.shopka.domain.user.role.RoleName;
 

@@ -4,26 +4,30 @@ import java.util.Objects;
 
 public class Role {
 
-   private final RoleId id;
+    private final RoleId id;
 
-   private final RoleName name;
+    private final RoleName name;
 
-   public Role(RoleId id, RoleName name) {
-    this.id = Objects.requireNonNull(id);
-    this.name = Objects.requireNonNull(name);
-   }
+    public Role(RoleId id, RoleName name) {
+        this.id = Objects.requireNonNull(id);
+        this.name = Objects.requireNonNull(name);
+    }
 
-   public RoleId getId() {
-    return id;
-   }
+    public RoleId getId() {
+        return id;
+    }
 
-   @Override
-   public int hashCode() {
-    return Objects.hash(id);
-   }
+    public RoleName getName() {
+        return name;
+    }
 
-   @Override
-   public boolean equals(Object obj) {
-    return obj instanceof Role other && id.equals(other.id); 
-   }
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof Role other && id.equals(other.id);
+    }
 }
