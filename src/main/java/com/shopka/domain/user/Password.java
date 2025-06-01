@@ -27,4 +27,9 @@ public class Password {
     public boolean equals(Object obj) {
         return obj instanceof Password other && hash.equals(other.hash);
     }
+
+    @Override
+    public String toString() {
+        return "Password hash";
+    }
 }
