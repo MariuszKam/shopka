@@ -1,4 +1,4 @@
-package com.shopka.infrastracture.user.role;
+package com.shopka.infrastracture.user;
 
 import com.shopka.domain.user.role.Role;
 

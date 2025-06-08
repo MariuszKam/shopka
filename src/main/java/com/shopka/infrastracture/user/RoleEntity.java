@@ -1,4 +1,4 @@
-package com.shopka.infrastracture.user.role;
+package com.shopka.infrastracture.user;
 
 import java.util.UUID;
 
