@@ -1,24 +1,24 @@
-package com.shopka;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
-import java.util.UUID;
+package com.shopka.infrastracture.role;
 
 import com.shopka.domain.user.role.Role;
 import com.shopka.domain.user.role.RoleId;
 import com.shopka.domain.user.role.RoleName;
 import com.shopka.infrastracture.user.role.RoleEntity;
 import com.shopka.infrastracture.user.role.RoleMapper;
-
+import com.shopka.infrastracture.user.role.RoleMapperImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import java.util.UUID;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 @ExtendWith(SpringExtension.class)
-@SpringBootTest
+@ContextConfiguration(classes = RoleMapperImpl.class)
 public class RoleMapperTest {
 
     @Autowired

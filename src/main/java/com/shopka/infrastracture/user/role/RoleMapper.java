@@ -2,18 +2,18 @@ package com.shopka.infrastracture.user.role;
 
 import com.shopka.domain.user.role.Role;
 
+import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface RoleMapper {
     
-    @Mapping(target = "id.value", source = "entity.id")
-    @Mapping(target = "name.name", source = "entity.name")
+    @Mapping(target = "id.value", source = "id")
+    @Mapping(target = "name.name", source = "name")
     Role toRole(RoleEntity entity);
 
-    @Mapping(target = "id", source = "id.value")
-    @Mapping(target = "name", source = "name.name")
+    @InheritInverseConfiguration
     RoleEntity toRoleEntity(Role role);
 
 }
